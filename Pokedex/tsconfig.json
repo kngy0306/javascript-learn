@@ -6,7 +6,7 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "outDir": "public", // tsのコンパイルしたファイルの保存先
+    "outDir": "public/js", // tsのコンパイルしたファイルの保存先
     "rootDir": "src"
   },
   "include": ["src"]
