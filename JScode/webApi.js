@@ -1,7 +1,25 @@
-async function callApi(){
-  const res = await fetch("https://jsonplaceholder.typicode.com/users");
-  const users = await res.json();
-  console.log(users);
+// DOM
+const lists = document.getElementById("lists");
+const button = document.getElementById("addBtn");
+
+// 関数
+function addList(user) {
+  const list = document.createElement("li");
+  list.innerText = user.name;
+  lists.appendChild(list);
 }
 
-callApi();
+async function getUsers() {
+  const res = await fetch("https://jsonplaceholder.typicode.com/users");
+  const users = await res.json();
+  return users;
+}
+
+async function listUsers() {
+  const users = await getUsers();
+  users.forEach(addList);
+}
+
+// イベント
+window.addEventListener("load", listUsers);
+button.addEventListener("click", listUsers);
