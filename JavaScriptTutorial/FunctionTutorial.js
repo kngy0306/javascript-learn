@@ -34,3 +34,6 @@ function viewMyFav(callback){
 viewMyFav(function(member){
   console.log("俺の嫁！俺の嫁！" + member + "さーん！");
 });
+
+const container = document.getElementById("app");
+const pokemons = 10;
