@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    // classを使用してコンポーネントを作成
+    class PhotoText extends React.Component {
+      getImageURL() {
+        const id = this.props.image;
+        const url = "./image/" + id + ".jpg";
+        return url
+      }
+
+      render() {
+        const label = this.props.label;
+        const url = this.getImageURL();
+        const boxStyle = {
+          border: "1px solid silver",
+          margin: "8px",
+          padding: "4px"
+        }
+        return (<div style={boxStyle}>
+          <img src={url} width="128" />
+          <span> {label} </span>
+        </div>)
+      }
+    }
+
+    const dom = <div>
+      <PhotoText image="TypeA" label="タイプAの表紙" />
+      <PhotoText image="TypeB" label="タイプBの表紙" />
+      <PhotoText image="TypeC" label="タイプCの表紙" />
+    </div>
+
+    ReactDOM.render(dom, document.getElementById("root"))
+  </script>
+</body>
+
+</html>
