@@ -8,7 +8,7 @@ interface IPokemon {
   image: string;
   type: string;
 }
-ß;
+
 const fetchData = (): void => {
   for (let i = 1; i <= pokemons; i++) {
     getPokemon(i);
