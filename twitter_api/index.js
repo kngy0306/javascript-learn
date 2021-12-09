@@ -13,8 +13,10 @@ async function getRequest() {
     // specify a search query, and any additional fields that are required
     // by default, only the Tweet ID and text fields are returned
     const params = {
-        'query': 'from:twitterdev -is:retweet',
-        'tweet.fields': 'author_id'
+        'query': 'from:nogizaka46',
+        'tweet.fields': 'public_metrics',
+        'expansions': 'attachments.media_keys',
+        'media.fields': 'preview_image_url'
     }
 
     const res = await needle('get', endpointUrl, params, {
